@@ -21,7 +21,7 @@ const Index = () => {
           {isLoading ? <Loading/> : (
             <>
               <h1 className='text-4xl font-bold'>{data?.title}</h1>
-              <div className="space-y-4 text-2xl">
+              <div className="space-y-4">
                 <div className='flex items-center space-x-3'>
                   <p>${data?.price}</p>
                   <div className="flex items-center text-yellow-500 space-x-0.5">
