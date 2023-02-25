@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-custom-gray-light
+  }
+}
+
+@layer components {
+  .stretched-link::after {
+    content: "";
+    @apply z-10 absolute inset-0 bg-transparent pointer-events-auto;
+  }
+}
