@@ -13,7 +13,7 @@ const Index = () => {
   const [price,  setPrice] = useState(0)
 
   const {data, isLoading, error, isSuccess} = useGetDetailProductQuery(Number(id))
-  const [addCart, {isSuccess:successAddCart}] = usePostCartMutation()
+  const [addCart, {isSuccess:successAddCart, isLoading:loadingCart}] = usePostCartMutation()
   const {data: user} = getDetailUser.useQueryState(null)
 
   const handleAddCart = async () => {
@@ -79,12 +79,15 @@ const Index = () => {
               </button>
             </div>
 
-            <button
-              className='py-2 px-3 w-full bg-custom-red text-white'
-              onClick={handleAddCart}
-            >
-              Add to Cart
-            </button>
+
+            {loadingCart ? <Loading/> : (
+              <button
+                className='py-2 px-3 w-full bg-custom-red text-white'
+                onClick={handleAddCart}
+              >
+                Add to Cart
+              </button>
+            )}
           </div>
         </div>
       </div>
