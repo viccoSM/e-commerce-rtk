@@ -1,4 +1,4 @@
-# MDI - Green Box - CMS
+# web e-commerce using RTK
 
 ### URL Web
 https://vsm-e-commerce.netlify.app/
