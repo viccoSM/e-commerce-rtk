@@ -1,7 +1,7 @@
 import React, {Fragment, memo} from 'react';
 import {Link} from 'react-router-dom'
 import { Menu, Transition } from '@headlessui/react'
-import {User} from "react-feather";
+import {ShoppingCart, User} from "react-feather";
 import {useGetDetailUserQuery} from "../services/user";
 
 const Header = () => {
@@ -13,6 +13,9 @@ const Header = () => {
           Logo
         </Link>
         <div className="flex items-center space-x-4">
+          <Link to='/carts'>
+            <ShoppingCart/>
+          </Link>
           <Menu as="div" className="relative inline-block text-left">
             <div>
               <Menu.Button>

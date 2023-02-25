@@ -1,28 +1,34 @@
 // Need to use the React-specific entry point to import createApi
 import { createApi } from '@reduxjs/toolkit/query/react'
 import {apiBaseQuery} from "../../config/env";
-import {DetailUserResponse} from "./model";
+import {ListCartResponse, RequestAndResponsePostCart} from "./model";
 
 // Define a service using a base URL and expected endpoints
 const api = createApi({
-  reducerPath: 'user',
+  reducerPath: 'cart',
   baseQuery: apiBaseQuery,
   endpoints: (builder) => ({
-    getDetailUser: builder.query<DetailUserResponse, null>({
-      query: () => ({
-        url: '/users/1'
+    postCart: builder.mutation<RequestAndResponsePostCart, RequestAndResponsePostCart>({
+      query: (data) => ({
+        url: '/carts',
+        method: 'POST',
+        body: data
       })
     }),
+    getListCartUser: builder.query<ListCartResponse, number>({
+      query: (id) => ({
+        url: `/carts/user/${id}`
+      })
+    })
   }),
 })
 
 // Export hooks for usage in functional components, which are
 // auto-generated based on the defined endpoints
 export const {
-  useGetDetailUserQuery,
-  // util: listUserUtil
+  usePostCartMutation,
+  useLazyGetListCartUserQuery
+  // util: listCartUtil
 } = api
-
-export const {getDetailUser} = api.endpoints
 
 export default api
