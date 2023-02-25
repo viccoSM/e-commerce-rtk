@@ -8,7 +8,7 @@ const Header = () => {
   const {data:user} = useGetDetailUserQuery(null)
   return (
     <header className='bg-custom-red text-white'>
-      <div className="container py-3 mx-auto flex items-center justify-between">
+      <div className="container py-3 px-4 mx-auto flex items-center justify-between">
         <Link to='/' className='text-2xl font-semibold'>
           Logo
         </Link>
@@ -31,10 +31,10 @@ const Header = () => {
               <Menu.Items className="absolute right-0 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                 <div className="px-2 py-1 text-gray-500">
                   <Menu.Item as='div' className='py-1'>
-                    <p>@{user?.username}</p>
+                    <p>{user?.name.firstname} {user?.name.lastname}</p>
                   </Menu.Item>
                   <Menu.Item as='div' className='py-1'>
-                    <p>{user?.email}</p>
+                    <p>@{user?.username}</p>
                   </Menu.Item>
                 </div>
               </Menu.Items>

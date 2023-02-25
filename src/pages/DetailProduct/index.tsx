@@ -11,7 +11,7 @@ const Index = () => {
 
   return (
     <section className="container mx-auto py-4 px-2 sm:px-0">
-      <div className='grid grid-cols-1 sm:grid-cols-2 gap-6'>
+      <div className='grid grid-cols-1 sm:grid-cols-2 gap-6 px-4'>
         <div className="w-full h-[450px] bg-white rounded-xl p-6 flex justify-center items-center">
           {isLoading && <Loading/>}
           {error && <h2>Cant image</h2>}

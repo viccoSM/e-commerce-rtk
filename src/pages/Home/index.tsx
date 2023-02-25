@@ -27,8 +27,8 @@ const Home = () => {
   }, [limit, category])
 
   return (
-    <section className="container mx-auto py-4 px-2 sm:px-0">
-      <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 gap-6">
+    <section className="container mx-auto py-4 sm:px-0">
+      <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 gap-6 px-4">
         <CardCategory category={category} setCategory={handleCategory}/>
         <div className='md:col-span-3 sm:col-span-2'>
           <div className='flex justify-between items-center py-3'>
